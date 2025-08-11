@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --primary-color: #4f46e5; /* A vibrant blue/purple from the image */
+    --secondary-color: #a3e635; /* A lime green from the image */
+    --text-color: #ffffff;
+    --dark-bg-color: #111827;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: linear-gradient(to right, var(--primary-color) 65%, var(--secondary-color) 35%);
+}
+
+.home-content{
+    width: 60%;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: var(--text-color);
+}
+
+.home-content h1 span {
+    color: var(--secondary-color);
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    width: 80%;
+}
+
+.home-img{
+    width: 40%;
+    position: relative;
+}
+
+.home-img img{
+    width: 32vw;
+    border: 1rem solid white;
+    transform: rotate(4deg);
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover{
+    transform: rotate(0deg) scale(1.05);
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid var(--secondary-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: var(--secondary-color);
+}
+
+.social-icons a:hover{
+    color: var(--primary-color);
+    transform: scale(1.3) translateY(-5px);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: var(--secondary-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    border: 2px solid var(--secondary-color);
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn:hover{
+    transform: scale(1.03);
+    background-color: transparent;
+    color: var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Software Developer";
+    color: var(--secondary-color);
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: var(--primary-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--primary-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--secondary-color);
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Pull Stack Developer";
+    }
+    21%, 40%{
+        content: "BSIT Student";
+    }
+    41%, 60%{
+        content: "Gamer";
+    }
+    61%, 80%{
+        content: "Procrastinator";
+    }
+    81%, 100%{
+        content: "Sleeper";
+    }
+}
+
+@keyframes typing{
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width: calc(100% + 8px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .home {
+        gap: 4rem;
+    }
+    .home-content {
+        width: 100%;
+    }
+    .home-img {
+        display: none; /* Hide image on smaller screens if it causes layout issues */
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+        background: var(--primary-color);
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img {
+        display: block;
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .home-img img{
+        width: 100%;
+    }
+}
+
+/* Keep other pages with a consistent dark theme */
+.tech-content h1 span, .experience-content h1 span, .contact-content h1 span {
+    color: var(--secondary-color);
+}
+
+.tech-stack, .experience, .contact {
+    background-color: var(--dark-bg-color);
+}
+
+.tech-content, .experience-content, .contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.tech-list, .experience-card, .contact-list {
+    max-width: 80rem;
+    width: 100%;
+}
+
+.tech-item, .experience-card, .contact-item {
+    text-align: left;
+}
+
+.tech-content h1, .experience-content h1, .contact-content h1 {
+    font-size: 6rem;
+}
+
+.tech-content h3, .experience-content h3, .contact-content h3 {
+    font-size: 3rem;
+}
+
+.tech-content > p, .experience-content > p, .contact-content > p {
+    font-size: 1.8rem;
+    max-width: 80rem;
+}
+
+.tech-info h4, .experience-info h4, .contact-info h4 {
+    font-size: 2.4rem;
+}
+
+.tech-info p, .experience-description, .contact-link {
+    font-size: 1.6rem;
+}
+
+.back-to-home {
+    margin-top: 4rem;
+}
+
+.btn, .btn-secondary {
+    font-size: 1.8rem;
+    padding: 1.2rem 3rem;
+    display: inline-block;
+    background-color: var(--secondary-color);
+    border-radius: 4rem;
+    color: var(--primary-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    border: 2px solid var(--secondary-color);
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover, .btn-secondary:hover {
+    transform: scale(1.03);
+    background-color: transparent;
+    color: var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.experience-card {
+    text-align: center;
+}
+
+.experience-description {
+    text-align: justify;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-link {
+    word-break: normal;
+}
+
+.highlight-item span {
+    font-size: 1.6rem;
+}
+
+.future-goals p {
+    font-size: 1.8rem;
+}
+
+.contact-cta p {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+    .tech-item, .contact-item {
+        text-align: center;
+    }
+}
+
+/* Tech Stack Icons */
+.tech-item i {
+    font-size: 6rem;
+    color: var(--secondary-color);
+    min-width: 8rem;
+    text-align: center;
+}
+
+/* Experience Icons */
+.experience-icon i {
+    font-size: 6rem;
+    color: var(--secondary-color);
+}
+
+/* Contact Icons */
+.contact-icon i {
+    font-size: 5rem;
+    color: var(--secondary-color);
+}
